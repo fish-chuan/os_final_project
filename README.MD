@@ -6,5 +6,5 @@ We use Python to implement the program.
 
 ## Simple Code Descriptions
 
-`start()` method means executing a sub process or thread.
-`join()` will block main process until sub process has finshed.
+1. `start()` method means executing a sub process or thread.
+2. `join()` will block main process until sub process has finshed.
