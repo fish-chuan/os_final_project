@@ -8,6 +8,7 @@ class Worker(threading.Thread):
         threading.Thread.__init__(self)
         self.num = num
     
+    # task of thread
     def run(self):
         a = 0
         b = 1
@@ -24,7 +25,7 @@ a = int(input("Enter a number: "))
 if a < 1:
     print("Error!")
     exit()
-elif a > 46:
+if a > 46:
     print("Too big!")
     exit()
 
@@ -35,6 +36,7 @@ for i in range(a):
     workers.append(Worker(i + 1))
     workers[i].start()
 
+# wait sub thread until finshes
 for i in range(a):
     workers[i].join()
 

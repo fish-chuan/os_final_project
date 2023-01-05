@@ -1,13 +1,11 @@
 from multiprocessing import Process, Array
 
 
-# Create an Array being shared between different processes
-shared_array = Array('i', [0]*46)
+# Shared Object between different processes
+shared_array = Array('i', [0] * 46)
 
 
 def count_fib(number, arr):
-    if number < 1:
-        return "error"
     a = 0
     b = 1
     for i in range(number):
@@ -35,9 +33,11 @@ for i in range(a):
     proc[i].start()
 
 
+# Block main process
 for i in range(len(proc)):
     proc[i].join()
 
 
+# Output result
 for i in range(a):
     print(str(shared_array[i]) + ' ', end="")
